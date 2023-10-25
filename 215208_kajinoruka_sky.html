@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>滑らかな背景色の変化</title>
+    <style>
+        body {
+            transition: background-color 10s; /* 背景色の変化を10秒かけて滑らかにする */
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 背景色を設定する関数
+        function setRandomBackgroundColor() {
+            var colors = ['#FF5733', '#33FF57', '#5733FF', '#33A2FF', '#FF339C'];
+            var randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+
+        // ページ読み込み時と1秒ごとに背景色をランダムに変更
+        window.onload = setRandomBackgroundColor;
+        setInterval(setRandomBackgroundColor, 1000);
+    </script>
+</body>
+</html>
